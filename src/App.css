@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: #fff;
+  background-color: rgb(6, 6, 14);
+}
+
+body a{
+  color: #fff;
+  text-decoration: none;
+  font-family:'Urbanist', Courier, monospace;
+}

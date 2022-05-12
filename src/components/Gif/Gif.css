@@ -1,0 +1,21 @@
+figure {
+    margin: 0;
+    display: grid;
+    /* grid-template-rows: 1fr auto; */
+    margin-bottom: 10px;
+    break-inside: avoid;
+    cursor: pointer;
+    position: relative;
+}
+
+figure img {
+    max-width: 100%;
+    display: block;
+}
+
+figcaption {
+    font-size: small;
+    background-color: rgba(255, 255, 255, .3);
+    position: absolute;
+    bottom: 10px;
+}

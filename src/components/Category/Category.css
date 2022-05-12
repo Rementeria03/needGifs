@@ -1,0 +1,34 @@
+.Category {
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.Category h3 {
+    font-size:xx-large;
+    font-family: "Urbanist";
+    margin: 20px 0;
+}
+
+.Category ul {
+    list-style: none;
+}
+
+.Category ul li a:hover {
+  color: #a5a5a5
+}
+
+@media screen and (max-width: 950px) {
+    .Category {
+        display: flex;
+        width: 100%;
+        text-align: center;
+    }
+
+    .Category ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,18 @@
+.main {
+    font-family: "Urbanist";
+    display: flex;
+    flex-direction: column;
+    padding: 1em 8em;
+}
+
+.main h3 {
+    margin: 24px 0;
+    font-size: xx-large;
+    align-self: flex-start;
+}
+
+@media screen and (max-width: 950px) {
+    .main {
+        padding: 1em;
+    }
+}
