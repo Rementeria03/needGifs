@@ -1,22 +1,36 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { GifsContext } from "../context/GifsContext";
 import getGifs from "../services/getGifs";
 
-export function useGifs({ keyword } = { keyword: null }) {
-  const { gifs, setGifs } = useContext(GifsContext);
+const INITIAL_PAGE = 0;
 
-  //si obtenemos una keyword usamos la ultima utilizada desde el localStorage
+export function useGifs({ keyword } = { keyword: "nelson" }) {
+  const { gifs, setGifs } = useContext(GifsContext);
+  const [page, setPage] = useState(INITIAL_PAGE);
+
+  //obtenemos la keyword o usamos la ultima en localStorage
   const keywordToUse = keyword || localStorage.getItem("lastKeyword") || "rick";
 
   useEffect(
     function () {
-      getGifs({ keyword: keywordToUse }).then((gifs) => {
+      getGifs({ keyword: keywordToUse, limit: 25 }).then((gifs) => {
         //guardamos la ultima keyword en el localStorage
         localStorage.setItem("lastKeyword", keyword);
         setGifs(gifs);
       });
     },
-    [keyword]
+    [keyword, setGifs, keywordToUse]
   );
-  return gifs;
+
+  useEffect(
+    function () {
+      if (page === INITIAL_PAGE) return;
+      getGifs({ keyword: keywordToUse, page }).then((nextGifs) => {
+        setGifs((prevGifs) => prevGifs.concat(nextGifs));
+      });
+    },
+    [page, setGifs, keywordToUse]
+  );
+
+  return { gifs, setPage, page };
 }

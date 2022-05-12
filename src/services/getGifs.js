@@ -1,7 +1,13 @@
-import {API_KEY, API_URL} from "./config"
+import { API_KEY, API_URL } from "./config";
 
-export default function getGifs({ keyword = "pardo" } = {}) {
-  const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=25&rating=g&lang=en`;
+export default function getGifs({
+  keyword = "pardo",
+  page = 0,
+  limit = 25,
+} = {}) {
+  const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${
+    page * limit
+  }&rating=g&lang=en`;
   return fetch(apiURL)
     .then((resp) => resp.json())
     .then((response) => {

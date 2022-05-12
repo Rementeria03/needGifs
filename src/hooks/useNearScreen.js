@@ -34,7 +34,7 @@ export function useNearScreen({ distance = "100px" } = {}) {
 
     //dejar la escucha cuando el elemento es off
     return () => observer && observer.disconnect();
-  }, []);
+  }, [distance]);
 
   return { isNearScreen, fromRef };
 }

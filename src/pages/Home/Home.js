@@ -8,7 +8,7 @@ import "./Home.css";
 export const Home = () => {
   const [keyword, setKeyword] = useState("");
   const [path, newLocation] = useLocation();
-  const gifs = useGifs();
+  const { gifs } = useGifs();
 
   function handleChange(evt) {
     setKeyword(evt.target.value);
@@ -28,7 +28,7 @@ export const Home = () => {
       </form>
       <h2 className="home-title">Ultima Busqueda</h2>
       <div className="gifs-home">
-        <ListOfGifs gifs={gifs}/>
+        <ListOfGifs gifs={gifs} />
         <LazyTranding />
       </div>
     </div>
