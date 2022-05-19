@@ -2,13 +2,17 @@ import React from "react";
 import { Link } from "wouter";
 import "./Gif.css"
 
-export default function Gif({ title, url, id }) {
+function Gif({ title, url, id }) {
   return (
-    <Link to={`/gif/${id}`}>
-      <figure>
+    <div className="gif-container">
+      <Link className="gif-link" to={`/gif/${id}`}>
+        <h4>{title}</h4>
         <img alt={title} src={url} />
-        <figcaption>{title}</figcaption>
-      </figure>
-    </Link>
+      </Link>
+    </div>
   );
 }
+
+export default React.memo((prevProps, nextProps) => {
+  return prevProps.id === nextProps.id
+})

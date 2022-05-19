@@ -6,13 +6,17 @@
 }
 
 .Category h3 {
-    font-size:xx-large;
+    font-size: x-large;
     font-family: "Urbanist";
     margin: 20px 0;
 }
 
 .Category ul {
     list-style: none;
+}
+
+.Category ul li {
+    margin-left: 10px;
 }
 
 .Category ul li a:hover {
