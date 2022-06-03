@@ -1,11 +1,11 @@
 .home-container {
+    width: 100%;
     font-family: Urbanist;
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 3em 8em;
 }
-
 .home-container h1 {
     font-size: 48px;
     font-weight: bolder;
@@ -35,14 +35,14 @@
 }
 
 .home-container form button:hover{
-    background-color: #b4b4b4;
+    background-color: #ffffff;
     transition: .1s all ease-in;
     color: #1e1e3d;
 }
 
 .gifs-home {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     justify-content: space-between;
 }
 

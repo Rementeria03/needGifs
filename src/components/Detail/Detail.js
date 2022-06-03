@@ -1,11 +1,21 @@
 import React from "react";
-import { useGlobalGifs } from "hooks/useGlobalGifs";
-import Gif from "../Gif/Gif";
+import useSingleGif from "hooks/useSingleGif";
+import Gif from "components/Gif/Gif";
+import { Helmet } from "react-helmet"
 
 export const Detail = ({ params }) => {
-  const gifs = useGlobalGifs();
+  const { gif } = useSingleGif({ id: params.id });
+  const title = gif ? gif.title : ''
 
-  const gif = gifs.find(singleGif => singleGif.id === params.id)
-
-  return <Gif {...gif} />;
+  return (
+    <>
+      <Helmet>
+        <title>{title} | NeedGifs</title>
+        <meta name="description" content={`description of ${title}`}/>
+      </Helmet>
+      <div>
+        <Gif {...gif}/>
+      </div>
+    </>
+  );
 };

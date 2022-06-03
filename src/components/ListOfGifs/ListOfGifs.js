@@ -1,6 +1,6 @@
 import React from "react";
 import Gif from "../Gif/Gif";
-import "./ListOfGifs.css"
+import "./ListOfGifs.css";
 
 export const ListOfGifs = ({ gifs }) => {
   return (

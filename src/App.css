@@ -14,3 +14,9 @@ body a{
   text-decoration: none;
   font-family:'Urbanist', Courier, monospace;
 }
+
+.main-app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

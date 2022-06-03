@@ -2,7 +2,6 @@
     width: 100%;
     min-height: 100vh;
     display: grid;
-    gap: 0 16px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    align-items: center;
+    gap: 10px 16px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
