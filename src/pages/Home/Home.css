@@ -11,35 +11,6 @@
     font-weight: bolder;
 }
 
-.home-container form {
-    display: flex;
-    justify-content: center;
-}
-
-.home-container form input {
-    font-family: Urbanist;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.home-container form button {
-    cursor: pointer;
-    color: #b4b4b4;
-    font-family: Urbanist;
-    padding: 10px 20px;
-    border: 1px solid #5a5a5a;
-    border-radius: 5px;
-    background-color: #1e1e3d;
-}
-
-.home-container form button:hover{
-    background-color: #ffffff;
-    transition: .1s all ease-in;
-    color: #1e1e3d;
-}
-
 .gifs-home {
     display: flex;
     gap: 10px;

@@ -1,0 +1,33 @@
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+}
+
+form button {
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Urbanist;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #350028;
+}
+
+form button:hover{
+    background-color: #ffffff;
+    transition: .1s all ease-in;
+    color: #1e1e3d;
+}
+
+form input {
+    font-family: Urbanist;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    margin-right: 10px;
+}
+
+form select {
+    font-family: Urbanist;
+}

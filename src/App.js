@@ -13,7 +13,7 @@ function App() {
       <div className="main-app-container">
         <Logo />
         <Route path="/" component={Home} />
-        <Route component={SearchResults} path="/gifs/:keyword" />
+        <Route component={SearchResults} path="/gifs/:keyword/:rating?" />
         <Route component={Detail} path="/gif/:id" />
       </div>
     </GifsProvider>
