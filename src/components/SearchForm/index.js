@@ -1,39 +1,16 @@
-import React, { useReducer, useState } from "react";
+import useForm from "components/SearchForm/useForm";
+import React from "react";
 import { useLocation } from "wouter";
 import "./searchForm.css";
 
 const RATINGS = ["g", "pg", "pg-13", "r"];
 
-const ACTIONS = {
-  UPDATE_KEYWORD: "update_keyword",
-  UPDATE_RATING: "update_rating",
-};
-
-const ACTIONS_REDUCERS = {
-  [ACTIONS.UPDATE_KEYWORD]: (state, action) => ({
-    ...state,
-    keyword: action.payload,
-  }),
-  [ACTIONS.UPDATE_RATING]: (state, action) => ({
-    ...state,
-    rating: action.payload,
-  }),
-};
-
-const reducer = (state, action) => {
-  const actionReducer = ACTIONS_REDUCERS[action.type];
-  return actionReducer ? actionReducer(state, action) : state;
-};
-
 function SearchForm({ initialKeyword = "", initialRating }) {
   const [_, newLocation] = useLocation();
-
-  const [state, dispatch] = useReducer(reducer, {
-    keyword: decodeURIComponent(initialKeyword),
-    rating: initialRating,
+  const { keyword, rating, updateKeyword, updateRating } = useForm({
+    initialKeyword,
+    initialRating,
   });
-
-  const { keyword, rating } = state;
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -42,17 +19,18 @@ function SearchForm({ initialKeyword = "", initialRating }) {
   };
 
   const handleChangeKeyword = (evt) => {
-    dispatch({ type: ACTIONS.UPDATE_KEYWORD, payload: evt.target.value });
+    updateKeyword(evt.target.value);
   };
 
   const handleChangeRating = (evt) => {
-    dispatch({ type: ACTIONS.UPDATE_RATING, payload: evt.target.value });
+    updateRating(evt.target.value);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <button type="submit">Buscar</button>
+      <button type="submit" className="form-button">Buscar</button>
       <input
+      className="form-input"
         placeholder="Search a GIF here"
         onChange={handleChangeKeyword}
         value={keyword}

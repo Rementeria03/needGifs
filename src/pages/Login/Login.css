@@ -1,0 +1,48 @@
+.login-page{
+    display: flex;
+    width: 100%;
+}
+
+.open-text {
+    display: flex;
+    flex: 3;
+}
+
+.login-form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2em;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.login-form input {
+    padding: 10px 20px;
+    font-family: "Urbanist";
+}
+
+.login-form button {
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Urbanist;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #350028;
+}
+
+.login-form button:hover{
+    background-color: #ffffff;
+    transition: .1s all ease-in;
+    color: #1e1e3d;
+}

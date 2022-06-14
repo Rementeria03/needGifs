@@ -4,7 +4,7 @@ form {
     margin-top: 1.5em;
 }
 
-form button {
+.form-button {
     cursor: pointer;
     color: #ffffff;
     font-family: Urbanist;
@@ -14,13 +14,13 @@ form button {
     background-color: #350028;
 }
 
-form button:hover{
+.form-button:hover{
     background-color: #ffffff;
     transition: .1s all ease-in;
     color: #1e1e3d;
 }
 
-form input {
+.form-input {
     font-family: Urbanist;
     padding: 10px 20px;
     border: none;
