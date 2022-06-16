@@ -6,7 +6,7 @@ import "./searchForm.css";
 const RATINGS = ["g", "pg", "pg-13", "r"];
 
 function SearchForm({ initialKeyword = "", initialRating }) {
-  const [_, newLocation] = useLocation();
+  const [, newLocation] = useLocation();
   const { keyword, rating, updateKeyword, updateRating } = useForm({
     initialKeyword,
     initialRating,

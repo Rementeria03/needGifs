@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useFormik } from "formik";
 import { auth } from "../../firebase/config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { UserContext } from "context/UserContext";
+import { useLocation } from "wouter";
 
 export default function RegisterForm() {
+
+  const { setUID } = useContext(UserContext);
+  const [, setLocation] = useLocation()
+
   const formik = useFormik({
     initialValues: {
+      displayName: "",
       email: "",
       password: "",
     },
@@ -14,7 +21,9 @@ export default function RegisterForm() {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+          if (user) alert(`¡Perfil creado con exito!`)
+          setUID(user.uid)
+          setLocation("/")
         })
         .catch((error) => {
           console.error(error);
@@ -23,8 +32,7 @@ export default function RegisterForm() {
   });
 
   return (
-    <div className="individual-form">
-    <h3>Registro</h3>
+    <div className="register-form">
       <form onSubmit={formik.handleSubmit} className="login-form">
         <input
           type="email"

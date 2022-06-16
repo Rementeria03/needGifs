@@ -8,6 +8,24 @@
     align-items: center;
 }
 
+.fav-heart-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgb(196, 196, 196);
+    opacity: .6;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.fav-heart-c svg {
+    color: rgb(180, 39, 39);
+}
+
 .gif-container img {
     object-fit: contain;
     width: 100%;

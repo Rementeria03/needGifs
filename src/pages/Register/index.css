@@ -1,4 +1,4 @@
-.login-page{
+.register-page {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
     font-size: small;
 }
 
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -15,7 +15,7 @@
     margin: 1em 0;
 }
 
-.login-form form {
+.register-form form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,14 +24,14 @@
     gap: .7em
 }
 
-.login-page input {
+.register-form form input {
     width: 100%;
     padding: 10px 20px;
     font-family: "Urbanist";
     border-radius: 5px;
 }
 
-.login-page button {
+.register-page button {
     width: 100%;
     cursor: pointer;
     color: #ffffff;
@@ -42,17 +42,8 @@
     background-color: #350028;
 }
 
-.login-form .login-btn {
-    font-size: small;
-    font-weight: bolder;
-}
-
-.login-page button:hover{
+.register-page button:hover{
     background-color: #ffffff;
     transition: .1s all ease-in;
     color: #1e1e3d;
-}
-
-.login-page a {
-    font-size: small;
 }

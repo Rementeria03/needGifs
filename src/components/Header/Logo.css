@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.wrapper {
+    width: 100%;
+    padding: 1em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper a {
+    font-family: "Lobster";
+    font-size: 2em;
+}

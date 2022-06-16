@@ -17,7 +17,7 @@ export const SearchResults = ({ params }) => {
   const title = gifs ? `${gifs.length} resultados de ${keyword}` : "";
 
   const debounceHandleNextPage = useCallback(
-    debounce(function () {
+    debounce(() => {
       setPage((prevPage) => prevPage + 1);
     }, 1000),
     [setPage]
